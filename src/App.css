@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+/* ── Layout ── */
+.layout {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── Header ── */
+.header {
+  padding: 24px 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Logo ── */
+.logo {
+  width: 80px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+}
+
+.header .logo {
+  animation-delay: 0.3s;
+}
+
+.footer .logo {
+  animation-delay: 1.2s;
+}
+
+/* ── Main ── */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.coming-soon {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(80px, 16vw, 200px);
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-shadow:
+    0 0 80px rgba(141, 125, 202, 0.6),
+    0 0 160px rgba(141, 125, 202, 0.2),
+    0 2px 40px rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards 0.6s;
+}
+
+.subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  font-size: clamp(13px, 2.2vw, 22px);
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 14px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards 0.95s;
+}
+
+/* ── Footer ── */
+.footer {
+  padding: 24px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Animation ── */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
